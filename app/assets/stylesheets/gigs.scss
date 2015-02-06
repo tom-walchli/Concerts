@@ -6,10 +6,14 @@
 	height: 150px;
 	background-color: #999999;
 	color: #ffffff;
-	text-align: center;
 
 	h1 {
+		text-align: center;
 		padding-top: 60px;
+	}
+
+	button {
+		color: blue;
 	}
 }
 
@@ -71,4 +75,9 @@
 
 .sidebar__li {
 	padding-bottom : 10px;
+}
+
+.home--link {
+	color: #ffffff;
+	font-weight: bold;
 }
