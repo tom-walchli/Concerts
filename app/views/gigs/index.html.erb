@@ -1,0 +1,19 @@
+
+<h3>The <%= @list_length %> most recently added concerts:</h3>
+
+<form action="/search">
+	<input type="text" placeholder="search by artist or venue" name="query"> 
+	<button type="submit">Search</button> 
+</form>
+
+<%= render 'table' %>
+
+<%= link_to('Add concert' , new_gig_path) %> 
+
+<!-- <form>
+	<input id="prodName"  type="text" placeholder="Enter product name" name="name"> 
+	<input id="prodDesc"  type="text" placeholder="Description" name="description"> 
+	<input id="prodPrice" type="text" placeholder="Price" name="price"> 
+	<button id="prodSubmit" type="submit" name="price">Add Book</button> 
+</form>
+ -->
