@@ -1,10 +1,8 @@
 
-<h3>The <%= @list_length %> most recently added concerts:</h3>
+<%= render 'searchbar' %>
 
-<form action="/search">
-	<input type="text" placeholder="search by artist or venue" name="query"> 
-	<button type="submit">Search</button> 
-</form>
+<h3>The <%= @list_length %> next concerts:</h3>
+<br>
 
 <%= render 'table' %>
 

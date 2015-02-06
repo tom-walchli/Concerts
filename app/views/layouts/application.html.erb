@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Concert</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Concerts</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+
+	<!-- <link rel="stylesheet" href="../../../../font-awesome-4.3.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
 </head>
 <body>
+	<div class="header">
+		<h1 class>Awesome concerts here!!!</h1>
+	</div>
 
-<h2>Header: Awesome concerts here...</h2>
+	<div class="container">
 
-<%= yield %>
+		<div class="row">
 
-<p style="color:grey">Footer: 2015 by Ironhackers</p>
+			<div class="col-sm-3 sidebar">
+
+				<%= render 'gigs/sidebar' %>
+
+			</div>
+
+			<div class="col-sm-9 main">
+
+				<%= yield %>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>Copyright 2015 by Ironhackers</p>
+	</div>
 
 </body>
 </html>

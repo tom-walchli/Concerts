@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get '/'   => 'gigs#index'
+  get '/'         => 'gigs#home'
+  # get '/sidebar'  => 'gigs#sidebar'
+  get 'search'    => 'gigs#search'
 
   resources :gigs
 

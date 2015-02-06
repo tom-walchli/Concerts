@@ -1,5 +1,5 @@
 <table>
-	<tr>
+	<tr class="index__tr">
 		<th>Artist</th>
 		<th>Venue</th>
 		<th>Date</th>
@@ -9,13 +9,13 @@
 	</tr>
 
 	<% @gigs.each do |g|  %>
-		<tr>
+		<tr class="index__tr">
 			<td><%= "#{g.artist}" %></td>
 			<td><%= link_to(g.venue, gig_path(g)) %> </td>
 			<td><%= "#{g.date}" %></td>
  			<td><%= "#{g.description}" %></td>
 			<td><%= "#{g.city}" %></td>
-			<td><%= "#{g.price}" %></td>
+			<td>$<%= "#{'%.2f' % g.price}" %></td>
 		</tr>
 	<% end %>
 </table>
