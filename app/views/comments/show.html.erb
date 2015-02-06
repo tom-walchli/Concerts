@@ -1,0 +1,12 @@
+<h2><%= @gig.artist %></h2>
+<p>At <%= @gig.venue %></p>
+<p>on <%= @gig.date.strftime('%a %b %e %Y') %></p>
+<p>for only <%= '%.2f' % @gig.price %>$</p>
+<p>in <%= @gig.city %></p>
+<p><%= @gig.description %></p>
+
+
+
+<%= link_to('Back', gigs_path) %>
+<%  %>
+

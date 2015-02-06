@@ -1,0 +1,12 @@
+<h3>concerts next month:</h3>
+
+<ul>
+	<% @gigs_month.each do |g|  %>
+		<li>
+			<%= "#{g.artist}" %><br>
+			at <%= link_to(g.venue, gig_path(g)) %> <br>
+			on <%= g.date.strftime('%Y-%b-%e') %><br>
+			in <%= "#{g.city}" %><br>
+		</li>
+	<% end %>
+</ul>

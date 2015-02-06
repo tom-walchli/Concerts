@@ -1,0 +1,33 @@
+<% if flash[:notice] %>
+<%= flash[:notice] %>
+<% end %>
+
+<% if @gig.errors.any? %>
+<ul>
+	<% @gig.errors.full_messages.each do |msg| %>
+	<li style="color:red"><%= msg%></li>
+	<% end %>
+</ul>
+<% end %>
+
+<%= form_for [@gig, @comment] do |f| %>
+	<table class="table--add">
+		<tr>
+			<td><%= f.label :title %></td>
+			<td><%= f.text_field :title %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :rating %></td>
+			<td><%= f.text_field :rating %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :content %></td>
+			<td><%= f.text_area :content %></td>
+		</tr>
+	</table>
+	<%= f.submit 'Save' %>
+	<%= link_to('Cancel', gig_path(@gig)) %>
+<% end %>
+<br>
+
+<% %>

@@ -1,6 +1,7 @@
 class Gig < ActiveRecord::Base
 
-	# has_many :reviews
+	has_many :comments
+
 	validates :venue  , presence: true
 	validates :price  , presence: true
 	validates :price  ,	numericality: true
@@ -13,11 +14,11 @@ class Gig < ActiveRecord::Base
 	# validates :artist, 		format: { with: /\A[a-zA-Z0-9]+\z/, message: "only allows letters" }
 	# validates :description,	format: { with: /\A[a-zA-Z0-9]+\z/, message: "only allows letters" }
 
-	# validates :date_cannot_be_in_the_past 	
+	# validates :date_cannot_be_in_the_past 	, true
 
 	def date_cannot_be_in_the_past
-    	if expiration_date.present? && expiration_date < Date.today
-      		errors.add(:expiration_date, "can't be in the past")
+    	if date.present? && date < Date.today
+      		errors.add(:date, "can't be in the past")
    		end
 	end
 
@@ -32,7 +33,7 @@ class Gig < ActiveRecord::Base
 	end
 
 	def self.get_in_range(start_time, end_time)
-		where("date > ?", start_time.beginning_of_day).where("date < ?", end_time.end_of_day).order('date DESC')
+		where("date > ?", start_time.beginning_of_day).where("date < ?", end_time.end_of_day).order('date ASC')
 	end
 
 	def self.get_one(id)
@@ -40,7 +41,8 @@ class Gig < ActiveRecord::Base
 	end
 
 	def self.search(query)
-		result = where("artist LIKE '%#{query}%' OR venue LIKE '%#{query}%'")
+		query = query.downcase
+		result = where("LOWER(artist) LIKE '%#{query}%' OR LOWER(venue) LIKE '%#{query}%' OR LOWER(city) LIKE '%#{query}%'")
 #		get_by_rating(result)
 		result
 	end

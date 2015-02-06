@@ -1,35 +1,45 @@
 <% if flash[:notice] %>
-	<%= flash[:notice] %>
+<%= flash[:notice] %>
 <% end %>
 
 <% if @gig.errors.any? %>
-	<ul>
-		<% @gig.errors.full_messages.each do |msg| %>
-			<li style="color:red"><%= msg%></li>
-		<% end %>
-	</ul>
+<ul>
+	<% @gig.errors.full_messages.each do |msg| %>
+	<li style="color:red"><%= msg%></li>
+	<% end %>
+</ul>
 <% end %>
 
 <%= form_for [@gig] do |f| %>
-	<%= f.label :artist %>
-	<%= f.text_field :artist %>
-	<br>
-	<%= f.label :venue %>
-	<%= f.text_field :venue %>
-	<br>
-	<%= f.label :date %>
-	<%= f.date_field :date %>
-	<br>
-	<%= f.label :city %>
-	<%= f.text_field :city %>
-	<br>
-	<%= f.label :description %>
-	<%= f.text_area :description %>
-	<br>
-	<%= f.label :price %>
-	<%= f.text_field :price %>
-	<br>
+	<table class="table--add">
+		<tr>
+			<td><%= f.label :artist %></td>
+			<td><%= f.text_field :artist %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :venue %></td>
+			<td><%= f.text_field :venue %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :date %></td>
+			<td><%= f.date_field :date %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :city %></td>
+			<td><%= f.text_field :city %></td>
+		</tr>	
+		<tr>
+			<td><%= f.label :description %></td>
+			<td><%= f.text_area :description %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :price %></td>
+			<td><%= f.text_field :price %></td>
+		</tr>
+	</table>
 	<%= f.submit 'Save' %>
+	<%= link_to('Cancel', gigs_path) %>
 <% end %>
-<%= link_to('Cancel', gigs_path) %>
+<br>
+
 <% %>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # get '/sidebar'  => 'gigs#sidebar'
   get 'search'    => 'gigs#search'
 
-  resources :gigs
+  resources :gigs do
+    resources :comments
+  end
 
 end

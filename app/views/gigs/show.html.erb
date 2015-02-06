@@ -1,11 +1,28 @@
 <h2><%= @gig.artist %></h2>
 <p>At <%= @gig.venue %></p>
 <p>on <%= @gig.date.strftime('%a %b %e %Y') %></p>
-<p>for only <%= '%.0f' % @gig.price %>$</p>
+<p>for only <%= '%.2f' % @gig.price %>$</p>
 <p>in <%= @gig.city %></p>
 <p><%= @gig.description %></p>
+<div class="hline"></div>
 
+<% if @gig.comments.count > 0 %>
+	<h4>Comments <%= link_to('Add your own comment', new_gig_comment_path(@gig)) %></h4>
+	<br>
+	<ul>
+		<% @gig.comments.each do |c| %>
+			<li class="comment__li">
+				<div class="comment--title"><%= "#{c.title}" %></div>
+				<div class="font--grey">Added: <%= "#{c.created_at}" %></div>
+				<div class="font--grey">Rating: <%= "#{c.rating}" %></div>
+				<div><%= "#{c.content}" %></div>
+			</li>
+		<% end %>
+	</ul>
 
+	<div class="hline"></div>
+
+<% end %>
 
 <%= link_to('Back', gigs_path) %>
 <%  %>

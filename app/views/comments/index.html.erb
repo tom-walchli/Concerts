@@ -1,0 +1,17 @@
+
+<%= render 'searchbar' %>
+
+<h3>The <%= @list_length %> next concerts:</h3>
+<br>
+
+<%= render 'table' %>
+
+<%= link_to('Add concert' , new_gig_path) %> 
+
+<!-- <form>
+	<input id="prodName"  type="text" placeholder="Enter product name" name="name"> 
+	<input id="prodDesc"  type="text" placeholder="Description" name="description"> 
+	<input id="prodPrice" type="text" placeholder="Price" name="price"> 
+	<button id="prodSubmit" type="submit" name="price">Add Book</button> 
+</form>
+ -->

@@ -1,3 +1,74 @@
 // Place all the styles related to the gigs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+	height: 150px;
+	background-color: #999999;
+	color: #ffffff;
+	text-align: center;
+
+	h1 {
+		padding-top: 60px;
+	}
+}
+
+
+.footer {
+	background-color: #999999;
+	color: #ffffff;
+	text-align: center;
+}
+
+.sidebar {
+	background-color: #eeeeee;
+}
+
+.index__tr {
+	td {
+		padding : 5px 10px 5px 10px;
+	}
+	th {
+		padding : 5px 10px 5px 10px;
+	}
+}
+
+.table--add {
+	margin-top: 20px;
+}
+
+.table--add td {
+	padding: 5px 10px 5px 10px;
+}
+
+.searchbar {
+	/*float: right;*/
+	display: inline;
+}
+
+.title {
+	display: inline;
+}
+
+.font--grey {
+	color:grey;	
+}
+
+.comment--title {
+	font-weight: bold;
+}
+
+.hline {
+	height:5px;
+	background-color: #bbbbbb;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.comment__li {
+	padding-bottom : 15px;
+}
+
+.sidebar__li {
+	padding-bottom : 10px;
+}
